@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Arun | Problem Solver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Arun<span>Problem Solver</span></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="contact-section">
+    <h1>Contact Me</h1>
+    <form class="contact-form" id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit" class="cta-btn">Send Message</button>
+      <p id="form-status"></p>
+    </form>
+  </main>
+  <footer>
+    &copy; 2026 Arun - Problem Solver
+  </footer>
+  <script>
+    // Smooth, demo-only form feedback
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.reset();
+      statusEl.style.color = 'green';
+      statusEl.textContent = 'Thank you! Your message has been sent.';
+      setTimeout(() => { statusEl.textContent=''; }, 4000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+:root {
+  --main-gradient: linear-gradient(90deg, #4f8cff 0%, #43e97b 100%);
+  --accent: #43e97b;
+  --text-dark: #1a1a1a;
+  --text-light: #fff;
+  --shadow: 0 4px 32px rgba(79,140,255,0.12);
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: #f8fafd;
+  color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  background: var(--main-gradient);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  font-weight: bold;
+}
+.logo span {
+  font-weight: 400;
+  font-size: 1rem;
+  background: #fff2;
+  padding: 0 0.5em;
+  margin-left: 0.5em;
+  border-radius: 5px;
+}
+
+.navbar ul {
+  display: flex; gap: 2rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  padding-bottom: 2px;
+  position: relative;
+  transition: color 0.18s;
+}
+.navbar a.active,
+.navbar a:hover {
+  color: var(--accent);
+}
+
+/* Hero/Main */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  min-height: 70vh;
+  background: #eef6fc;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 0;
+}
+.intro {
+  max-width: 36em;
+  padding: 2em;
+}
+.intro h1 {
+  font-size: 2.6rem;
+  margin: 0 0 .3em 0;
+  color: #2245a8;
+}
+.intro h1 span {
+  color: var(--accent);
+}
+.intro h2 {
+  font-size: 1.8rem;
+  margin: 0 0 1.1em 0;
+  color: #2959c7;
+}
+.intro h2 span {
+  color: var(--accent);
+}
+.intro p {
+  font-size: 1.1rem;
+  color: #3c3c3c;
+  margin: 0 0 2em 0;
+}
+.cta-btn {
+  background: var(--main-gradient);
+  color: #fff;
+  padding: 0.8em 2.1em;
+  font-size: 1.02rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 2px 16px 0 #43e97b11;
+  text-decoration: none;
+  margin-top: 2em;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-btn:hover {
+  background: linear-gradient(90deg, #43e97b 0%, #4f8cff 100%);
+  color: #053a65;
+}
+
+.hero-img img {
+  width: 330px;
+  height: 330px;
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    min-height: 50vh;
+    gap: 2em;
+    padding-top: 2.5em;
+  }
+  .hero-img img {
+    width: 88vw;
+    height: 230px;
+    border-radius: 18px;
+  }
+}
+
+/* About Section */
+.about-section {
+  max-width: 900px;
+  margin: 2em auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2.5em 2em 2em 2em;
+}
+.about-section h1 {
+  font-size: 2.1rem;
+  color: #2245a8;
+  margin-bottom: 1.2em;
+  letter-spacing: 0.02em;
+}
+.about-content {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 70px;
+  object-fit: cover;
+  box-shadow: 0 2px 15px #2245a814;
+}
+.bio {
+  flex: 1;
+}
+.bio p {
+  font-size: 1.11rem;
+  color: #222;
+  margin-bottom: 1.3em;
+}
+.bio ul {
+  margin: 0 0 1.6em 0;
+  padding-left: 1.1em;
+  color: #2959c7;
+}
+@media (max-width: 700px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6em;
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 410px;
+  margin: 2.5em auto 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 2.1em 2em 1.5em 2em;
+}
+.contact-section h1 {
+  font-size: 2rem;
+  color: #2245a8;
+  margin-bottom: 1.2em;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.contact-form label {
+  color: #2959c7;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8em 1em;
+  border: 1px solid #e5f0fc;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f9fbfd;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid var(--accent);
+  outline: none;
+}
+.contact-form button.cta-btn {
+  width: fit-content;
+  align-self: flex-end;
+}
+
+#form-status {
+  font-size: 1.01rem;
+  margin-top: 0.8em;
+  text-align: right;
+}
+
+
+footer {
+  margin-top: 3em;
+  text-align: center;
+  color: #999;
+  font-size: 1rem;
+  padding: 1.7em 2em 1.4em 2em;
+  background: #f1f3fa;
+  border-top: 1px solid #e8e8fa;
+}
